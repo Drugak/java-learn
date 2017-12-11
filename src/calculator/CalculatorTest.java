@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.Assert.*;
 
@@ -32,10 +33,11 @@ public class CalculatorTest {
     @After
     public void afterTest() {
         calculator = null;
-        System.out.println("Remove Calculation class");
+        System.out.println("Remove Calculation class !");
     }
 
     @Test
+    @DisplayName("😱")
     public void getSum() throws Exception {
         assertEquals(15, calculator.getSum(7,8));
     }

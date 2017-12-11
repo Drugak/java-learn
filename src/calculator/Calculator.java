@@ -11,7 +11,7 @@ public class Calculator {
     }
 
     public int getMultiple(int x, int y) {
-        return x*y;
+        return x * y;
     }
 
 }
