@@ -1,8 +1,10 @@
 package person;
 
-//import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 //
-//import static java.lang.System.*;
+import static java.lang.System.*;
 
 /**
  * Constructor class
@@ -13,24 +15,35 @@ public class Constructor {
         /*
          * заполним масив staff тремя объектами типа Employee
          */
-//        ArrayList<Person> staff = new ArrayList<Person>();
+        Employee[] staff = {
+            new Employee("Vitaliy", 7000),
+            new Employee("Harry", 5000),
+            new Employee("Abc", 5000),
+            new Employee("Lona", 5000),
+            new Employee("Igor", 4000)
+        };
 
-//        staff.add(new Employee("Harry", 5000, 2015, 12, 8));
-//        staff.add(new Manager("Drugak", 5000, 2017, 11, 5));
-
-        Employee origin = new Employee("Vitaliy", 5000);
-        origin.setHireDay(2017, 11, 13);
-
-        try {
-            Employee copy = origin.clone();
-            copy.setHireDay(1992, 11, 13);
-
-            System.out.println("origin:" + origin);
-            System.out.println("copy:" + copy);
-
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+        for (Employee i:staff) {
+            System.out.println("orign " + i.getName());
         }
+        Arrays.sort(staff, Comparator.comparing(Employee::getName));
+        System.out.println("================================================");
+        for (Employee i:staff) {
+            System.out.println("sorted " + i.getName());
+        }
+
+//        try {
+//            Employee copy = origin.clone();
+//            copy.setHireDay(1992, 11, 13);
+//
+//
+//
+//            System.out.println("origin:" + origin);
+//            System.out.println("copy:" + copy);
+//
+//        } catch (CloneNotSupportedException e) {
+//            e.printStackTrace();
+//        }
 
 
         /*
